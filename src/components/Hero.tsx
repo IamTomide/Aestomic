@@ -30,7 +30,7 @@ const HeroSection = () => {
                         </Button>
                     </Link>
                 </div>
-                <div className="mt-10 grid grid-cols-3 gap-6 max-w-md">
+                <div className="mt-10 grid grid-cols-3 gap-6">
                     {stats.map((s) => (
                         <div key={s.l}>
                         <div className="font-display text-base md:text-xl lg:text-2xl font-semibold text-primary">{s.n}</div>
