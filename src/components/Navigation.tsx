@@ -17,7 +17,7 @@ const Navigation = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    useEffect(() => {
+      useEffect(() => {
     if (isMenuOpen) {
       const prev = document.body.style.overflow;
       document.body.style.overflow = "hidden";
@@ -39,7 +39,7 @@ const Navigation = () => {
                         </span>
                         <h1 className="text-2xl font-bold">Aestomic <span className="text-primary">Schools</span></h1>
                     </Link>
-                    <nav className="opacity-0 md:opacity-100 items-center gap-1.5">
+                    <nav className="hidden md:flex items-center gap-1.5">
                         {NavItems.map((item) => (
                             <Link key={item.name} to={item.to} className="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 hover:rounded-2xl">{item.name}</Link>
                         ))}
@@ -56,21 +56,21 @@ const Navigation = () => {
             </header>
 
             
-            <div className={`fixed inset-0 z-40 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
+            <div className={` fixed inset-0 z-40 transition-all duration-300 ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
                 <div 
-                className="absolute inset-0 bg-foreground/20 backdrop-blur-sm" 
+                className="absolute inset-0 bg-foreground/20 backdrop-blur-md" 
                 onClick={() => setIsMenuOpen(false)} 
                 ></div>
-                <div className={`absolute inset-x-3 top-18 rounded-2xl bg-background/95 border border-border shadow-2xl transition-all duration-300 transform-gpu
-                    ${isMenuOpen ? " opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-95"}`}
+                <div className={`absolute inset-x-3 top-18 rounded-2xl bg-background/95 backdrop-blur-xl border border-border shadow-2xl transition-all duration-700 
+                    ${isMenuOpen ? " opacity-100" : "opacity-0"}`}
                 >
                     <div className="bg-soft-blob">
-                        <nav className="px-3 pb-4 pt-3 flex flex-col gap-1.5 rounded-2xl">
+                        <nav className="px-3 pb-4 pt-3 flex flex-col gap-1.5 backdrop-blur-2xl rounded-2xl">
                             {NavItems.map((item) => (
                             <Link
                                 key={item.to}
                                 to={item.to}
-                                className="flex items-center justify-between p-4 bg-background rounded-xl text-base font-medium hover:bg-primary/10 hover:rounded-2xl"
+                                className="flex items-center justify-between p-4 bg-background shadow-xs rounded-xl text-base font-medium hover:bg-primary/10 hover:rounded-2xl"
                             >
                                 <span>{item.name} </span>
                                 <ArrowRight className="w-4 h-4 opacity-60"/>
