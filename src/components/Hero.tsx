@@ -41,7 +41,7 @@ const HeroSection = () => {
             </div>
             <div className="relative lg:max-w-xl md:mt-16 lg:col-span-6">
                 <div className="relative rounded-3xl shadow-2xl ring-1 ring-border">
-                    <img src={HeroImg} alt="School Image" width={1536} height={1024} className="w-full h-auto object-cover rounded-3xl" />
+                    <img src={HeroImg} alt="School Image" width={1536} height={1024} className="w-full as h-auto object-cover rounded-3xl" fetchPriority="high" loading="eager" />
                 
                     <div className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border p-4 animate-float">
                         <span className="grid place-items-center w-11 h-11 rounded-xl bg-nursery text-nursery-foreground">
