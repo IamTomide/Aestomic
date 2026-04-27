@@ -39,11 +39,11 @@ const HeroSection = () => {
                     ))}
                 </div>
             </div>
-            <div className="relative mt-16 lg:col-span-6 ">
-                <div className="relative rounded-3xl shadow-2xl ring-1 ring-border aspect-video">
-                    <img src={HeroImg} alt="School Image" width={1536} height={1024} className="w-full as h-auto object-cover rounded-3xl"/>
+            <div className="relative lg:max-w-xl mt-16 lg:col-span-6 aspect-video">
+                <div className="relative rounded-3xl shadow-2xl ring-1 ring-border">
+                    <img src={HeroImg} alt="School Image" width={1536} height={1024} className="w-full as h-full object-cover rounded-3xl" fetchPriority="high" loading="eager" />
                 
-                    <div className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border p-4 animate-[float_3s_ease-in-out_infinite] will-change-transform" >
+                    <div className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border p-4 animate-[float_3s_ease-in-out_infinite]" s>
                         <span className="grid place-items-center w-11 h-11 rounded-xl bg-nursery text-nursery-foreground">
                             <ShieldCheck className="w-5 h-5" />
                         </span>
@@ -52,7 +52,7 @@ const HeroSection = () => {
                             <div className="text-xs text-muted-foreground">The foundation we build on</div>
                         </div>
                     </div> 
-                    <div className="absolute -top-5 -right-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border p-4 animate-[float_3s_ease-in-out_infinite] will-change-transform">
+                    <div className="absolute -top-5 -right-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border p-4 animate-float" style={{ animationDelay: "1.5s" }}>
                         <span className="grid place-items-center w-11 h-11 rounded-xl bg-primary-stage text-primary-stage-foreground">
                             <Trophy className="w-5 h-5" />
                         </span>
