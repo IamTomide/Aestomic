@@ -12,7 +12,8 @@ const highlights = [
   { icon: Beaker, title: "Hands-on STEM", text: "Practical lab work where children try, test and build — not just read." },
   { icon: Trophy, title: "Sports & Activity", text: "An active campus where students play, compete and learn teamwork." },
 ];
-import HeroImg from "@/assets/heroImg.webp"
+import HeroImg from "/heroImg.webp"
+import Subheading from "@/components/subheading";
 const images = [HeroImg, HeroImg, HeroImg, HeroImg]
 
 const Home = () => {
@@ -22,16 +23,12 @@ const Home = () => {
                 <HeroSection />
             </section>
             <Stages />
-            <section className="max-w-7xl space-y-16 mx-auto px-5 lg:px-8 py-16 md:py-28">
-                <div className="max-w-4xl text-center mx-auto">
-                    <span className="text-sm font-semibold uppercase tracking-widest text-primary">What we offer</span>
-                    <h2 className="mt-3 font-display text-3xl md:text-5xl font-semibold text-balance">
-                        More than just classroom learning.
-                    </h2>
-                    <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-                        An honest look at the experiences and values that shape every Aestomic child.
-                    </p>
-                </div>  
+            <Subheading 
+                title="What we offer"
+                heading="More than just classroom learning."
+                text="An honest look at the experiences and values that shape every Aestomic child."
+                />
+            <section className="max-w-7xl space-y-12 mx-auto px-5 lg:px-8">
                 <div className="px-5 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                     {highlights.map((h) => (
                         <div className="flex flex-col gap-2 border border-border p-4 rounded-2xl" key={h.title}>
@@ -41,14 +38,10 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-                <div className="mx-auto text-left">
-                    <span className="text-sm font-semibold uppercase tracking-widest text-primary">school life</span><br />
-                    <div className="flex items-center justify-between">
-                        <h2 className="mt-3 font-display text-3xl md:text-5xl font-semibold capitalize text-balance">
-                            Moments from our days
-                        </h2> 
-                    </div>
-                </div>
+                <Subheading variant="action" ctaLabel="view gallery" ctaHref="/gallery"
+                    title="school life"
+                    heading="Moments from our days."
+                />
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {images.map((src, i) => (
                         <div key={i} className="aspect-video md:aspect-4/3 overflow-hidden rounded-2xl">
@@ -57,7 +50,7 @@ const Home = () => {
                     ))}
                 </div>
 
-                <div className="relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] bg-primary text-primary-foreground p-8 md:p-16 text-center">
+                <div className="relative overflow-hidden rounded-[2rem] md:rounded-3xl bg-primary text-primary-foreground p-8 my-18 md:p-16 text-center">
                     <div className="absolute inset-0 bg-soft-blob opacity-30" />
                     <div className="relative">
                         <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-semibold text-balance">Ready to give your child a strong start?</h2>

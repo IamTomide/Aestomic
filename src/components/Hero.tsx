@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Sparkles, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-import HeroImg from "@/assets/heroImg.webp"
+import HeroImg from "/heroImg.webp"
 import { Badge } from "./ui/badge";
 
 const stats = [
@@ -42,7 +42,7 @@ const HeroSection = () => {
             </div>
             <div className="relative lg:max-w-xl mt-16 lg:mt-0">
                 <div className="relative rounded-3xl shadow-2xl ring-1 ring-border">
-                    <img src={HeroImg} alt="School Image" className="w-full h-auto object-cover rounded-3xl aspect-video" fetchPriority="high" loading="lazy" />
+                    <img src={HeroImg} alt="School Image" width={600} height={350} className="w-full h-auto object-cover rounded-3xl aspect-video" fetchPriority="high" loading="eager" decoding="async" />
                 
                     <div className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border px-2 py-1 md:p-4 animate-[float_3s_ease-in-out_infinite]">
                         <span className="grid place-items-center w-11 h-11 rounded-xl bg-nursery text-nursery-foreground">

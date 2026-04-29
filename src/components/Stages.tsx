@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import HeroImg from "@/assets/heroImg.webp"
+import HeroImg from "/heroImg.webp"
 import {
   Card,
   CardDescription,
@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
+import Subheading from "./subheading";
 
 const stages = [
   {
@@ -45,30 +46,16 @@ const stages = [
 const Stages = () => {
     return ( 
         <section className="w-full">
-            <div className="max-w-4xl px-5 lg:px-8 py-16 md:py-28 text-center mx-auto">
-                <span className="text-sm font-semibold uppercase tracking-widest text-primary">Welcome</span>
-                <h2 className="mt-3 font-display text-3xl md:text-5xl font-semibold text-balance">
-                    A school that takes your child seriously.
-                </h2>
-                <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-                    From Nursery to Secondary, we raise children with strong academics, real discipline, godly values and exposure to the world — through inter-school competitions, leadership summits, sports and the arts.
-                </p>
-            </div>  
-            
-
+            <Subheading 
+                title="welcome"
+                heading="A school that takes your child seriously."
+                text="From Nursery to Secondary, we raise children with strong academics, real discipline, godly values and exposure to the world — through inter-school competitions, leadership summits, sports and the arts."
+            />
             <section className="mx-auto max-w-7xl px-5 lg:px-8">
-                <div className="mx-auto text-left">
-                    <span className="text-sm font-semibold uppercase tracking-widest text-primary">our school</span><br />
-                    <div className="flex items-center justify-between">
-                        <h2 className="mt-3 font-display text-3xl md:text-5xl font-semibold capitalize text-balance">
-                            Three stages, one journey.
-                        </h2> 
-                        <Link to="/programs" className="hidden lg:inline-flex items-center gap-1 text-sm pt-6 justify-between hover:underline">
-                            See all Programs
-                            <ArrowRight className="w-4 h-4" />
-                        </Link>
-                    </div>
-                </div>
+                <Subheading variant="action" ctaLabel="See all Programs" ctaHref="/programs"
+                    title="our school"
+                    heading="Three stages, one journey."
+                />
                 <div className="grid md:grid-cols-3 gap-6 py-8">
                 {
                     stages.map((s) => (

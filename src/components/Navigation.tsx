@@ -61,15 +61,16 @@ const Navigation = () => {
                 className="absolute inset-0 bg-foreground/20 backdrop-blur-md" 
                 onClick={() => setIsMenuOpen(false)} 
                 ></div>
-                <div className={`absolute inset-x-3 top-18 rounded-2xl bg-background/95 backdrop-blur-xl border border-border shadow-2xl transition-all duration-700 
+                <div className={`absolute inset-x-3 top-18 rounded-2xl bg-background/95 backdrop-blur-xl border border-border shadow-2xl transition-all duration-200 
                     ${isMenuOpen ? " opacity-100" : "opacity-0"}`}
                 >
                     <div className="bg-soft-blob">
-                        <nav className="px-3 pb-4 pt-3 flex flex-col gap-1.5 backdrop-blur-2xl rounded-2xl">
+                        <nav className="px-3 pb-4 pt-3 flex flex-col gap-1.5 backdrop-blur-sm rounded-2xl">
                             {NavItems.map((item) => (
                             <Link
                                 key={item.to}
                                 to={item.to}
+                                onClick={() => setIsMenuOpen(false)} 
                                 className="flex items-center justify-between p-4 bg-background shadow-xs rounded-xl text-base font-medium hover:bg-primary/10 hover:rounded-2xl"
                             >
                                 <span>{item.name} </span>
