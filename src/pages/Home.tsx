@@ -13,7 +13,7 @@ const highlights = [
   { icon: Trophy, title: "Sports & Activity", text: "An active campus where students play, compete and learn teamwork." },
 ];
 import HeroImg from "/heroImg.webp"
-import Subheading from "@/components/subheading";
+import Subheading from "@/components/Subheading";
 const images = [HeroImg, HeroImg, HeroImg, HeroImg]
 
 const Home = () => {
@@ -29,12 +29,12 @@ const Home = () => {
                 text="An honest look at the experiences and values that shape every Aestomic child."
                 />
             <section className="max-w-7xl space-y-12 mx-auto px-5 lg:px-8">
-                <div className="px-5 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                <div className="px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
                     {highlights.map((h) => (
                         <div className="flex flex-col gap-2 border border-border p-4 rounded-2xl" key={h.title}>
                             <span className="h-8 w-8 rounded-full bg-primary/20 inline-flex items-center justify-center"><h.icon className="w-5 h-5 text-primary" /></span>
-                            <h3 className="font-semibold">{h.title}</h3>
-                            <p className="text-sm text-muted-foreground">{h.text}</p>
+                            <h3 className="font-semibold text-sm sm:text-bold">{h.title}</h3>
+                            <p className="hidden sm:block text-sm text-muted-foreground">{h.text}</p>
                         </div>
                     ))}
                 </div>
@@ -42,9 +42,9 @@ const Home = () => {
                     title="school life"
                     heading="Moments from our days."
                 />
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     {images.map((src, i) => (
-                        <div key={i} className="aspect-video md:aspect-4/3 overflow-hidden rounded-2xl">
+                        <div key={i} className="aspect-video md:aspect-4/3 overflow-hidden rounded-sm md:rounded-2xl">
                             <img src={src} alt={`School life moment ${i + 1}`} className="aspect-video md:aspect-4/3 w-full h-auto object-cover" />
                         </div>
                     ))}

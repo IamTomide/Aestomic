@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge";
-import Subheading from "./subheading";
+import Subheading from "./Subheading";
 
 const stages = [
   {

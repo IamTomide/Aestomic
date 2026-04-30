@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 import { ArrowRight, Mail, MapPin, Menu, Phone, X } from "lucide-react";
@@ -9,6 +9,7 @@ import { NavItems } from "@/constants/navItems";
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 8);
@@ -41,7 +42,7 @@ const Navigation = () => {
                     </Link>
                     <nav className="hidden md:flex items-center gap-1.5">
                         {NavItems.map((item) => (
-                            <Link key={item.name} to={item.to} className="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 hover:rounded-2xl">{item.name}</Link>
+                            <Link key={item.name} to={item.to} className={`px-3 py-2 text-sm font-medium text-gray-700 hover:bg-primary/10 hover:rounded-2xl ${location.pathname === item.to ? 'bg-primary/10 text-primary rounded-2xl' : ''}`}>{item.name}</Link>
                         ))}
                     </nav>
                     <Link to="/contact"> <Button className="hidden md:flex p-5">Enroll now </Button></Link>
