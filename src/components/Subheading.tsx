@@ -42,13 +42,13 @@ const Subheading = ({
     }
 
     return (
-        <div className="max-w-4xl px-5 lg:px-8 py-12 md:py-28 text-center mx-auto">
+        <div className="max-w-5xl px-5 lg:px-8 py-12 md:py-28 text-center mx-auto">
             {titleContent}
-            <h2 className="mt-5 font-display text-3xl md:text-5xl font-semibold text-balance">
+            <h2 className="mt-5 font-display text-4xl md:text-6xl font-semibold text-balance">
                 {heading}
             </h2>
             {text ? (
-                <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+                <p className="mt-5 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
                     {text}
                 </p>
             ) : null}
