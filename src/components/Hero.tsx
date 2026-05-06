@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldCheck, Sparkles, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import HeroImg from "/heroImg.webp"
+import HeroImgMobile from "/heroImg-mobile.webp"
+import HeroImgMd from "/heroImg-md.webp"
 import { Badge } from "./ui/badge";
 
 const stats = [
@@ -14,7 +16,7 @@ const stats = [
 const HeroSection = () => {
     return ( 
         <div className="flex flex-col lg:flex-row lg:gap-16 max-w-7xl mx-auto px-5 lg:px-8 pt-10 pb-14 md:pt-20 md:pb-24 lg:items-center">
-            <div className="flex flex-col lg:gap-4 max-w-xl min-w-xs">
+            <div className="flex flex-col lg:gap-4 max-w-xl lg:max-w-2/5 min-w-2xs">
                 <Badge className="uppercase px-6 py-4 text-primary text-sm bg-background">
                     <Sparkles className="w-3.5 h-3.5" /> Nursery . Primary .Secondary
                 </Badge>
@@ -40,9 +42,15 @@ const HeroSection = () => {
                     ))}
                 </div>
             </div>
-            <div className="relative lg:max-w-xl mt-16 lg:mt-0">
-                <div className="relative rounded-3xl shadow-2xl ring-1 ring-border">
-                    <img src={HeroImg} alt="School Image" width={600} height={350} className="w-full h-auto object-cover rounded-3xl aspect-video" fetchPriority="high" loading="eager" decoding="async" />
+            <div className="relative lg:max-w-xl mt-16 lg:mt-0 mx-auto">
+                <div className="relative rounded-3xl shadow-2xl ring-1 ring-border/10">
+                 
+                    <picture>
+                        <source media="(max-width: 460px)" srcSet={HeroImgMobile} type="image/webp"/>
+                        <source media="(max-width: 604px)" srcSet={HeroImgMd} type="image/webp"/>
+                        <source media="(min-width: 605px)" srcSet={HeroImg} type="image/webp"/>
+                        <img src={HeroImg} alt="Aestomic Schools" loading="eager" fetchPriority="high" decoding="async" className="w-full h-auto object-cover rounded-3xl aspect-video" />
+                    </picture>
                 
                     <div className="absolute -bottom-5 -left-5 hidden md:flex items-center gap-3 bg-card rounded-2xl shadow-xl border border-border px-2 py-1 md:p-4 animate-[float_3s_ease-in-out_infinite]">
                         <span className="grid place-items-center w-11 h-11 rounded-xl bg-nursery text-nursery-foreground">
